@@ -532,6 +532,8 @@ KDJ指标计算函数12345678910...">
     
       
       
+        <a title='KDJ指标在指数上的择时效应' href='/2020/05/04/KDJ%E6%8C%87%E6%A0%87%E5%9C%A8%E6%8C%87%E6%95%B0%E4%B8%8A%E7%9A%84%E6%8B%A9%E6%97%B6%E6%95%88%E5%BA%94/'><img class='thumbnail' src='https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/thumbnail_line_chart.ico'></a>
+      
       <div class="meta" id="header-meta">
         
           
@@ -1236,7 +1238,7 @@ End Time : 2019-03-10 16:09:52.517584, Elapsed Time: 0:00:20.067092</code></pre>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-04T10:02:12+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-04T12:01:04+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：May 4, 2020</p>
@@ -1266,7 +1268,7 @@ End Time : 2019-03-10 16:09:52.517584, Elapsed Time: 0:00:20.067092</code></pre>
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/05/04/KDJ%E6%8C%87%E6%A0%87%E5%9C%A8%E6%8C%87%E6%95%B0%E4%B8%8A%E7%9A%84%E6%8B%A9%E6%97%B6%E6%95%88%E5%BA%94/&title=KDJ指标在指数上的择时效应 - HiCoder&summary=123456"""导入常用模块"""import numpy as npimport pandas as pdimport matplotlib.pyplot as pltimport datetimefrom environment import * # 导入回测模块
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/05/04/KDJ%E6%8C%87%E6%A0%87%E5%9C%A8%E6%8C%87%E6%95%B0%E4%B8%8A%E7%9A%84%E6%8B%A9%E6%97%B6%E6%95%88%E5%BA%94/&title=KDJ指标在指数上的择时效应 - HiCoder&pics=https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/thumbnail_line_chart.ico&summary=123456"""导入常用模块"""import numpy as npimport pandas as pdimport matplotlib.pyplot as pltimport datetimefrom environment import * # 导入回测模块
 
 KDJ指标计算函数1234567891011121314151617181920212223242526272829303132333435import talib as tlfrom functools import reduce# SMA计算函数def SMA(close, timeperiod) :    close = np.nan_to_num(close)    return reduce(lambda x, y: ((timeperiod - 1) * x + y) / timeperiod, close)    # KDJ计算函数def KDJ(high, low, close, fastk_period, slowk_period, fastd_period) :    kValue, dValue = tl.STOCHF(high, low, close, fastk_period, fastd_period=1, fastd_matype=0)        kValue = np.array(list(map(lambda x : SMA(kValue[:x], slowk_period), range(1, len(kValue) + 1))))    dValue = np.array(list(map(lambda x : SMA(kValue[:x], fastd_period), range(1, len(kValue) + 1))))        jValue = 3 * kValue - 2 * dValue        func = lambda arr : np.array([0 if x &lt; 0 else (100 if x &gt; 100 else x) for x in arr])        kValue = func(kValue)    dValue = func(dValue)    jValue = func(jValue)    return kValue, dValue, jValue# 获取某标的的KDJ信息def get_kdj(stock, count, end_date, unit):    data = get_bars(security=stock, count=count, unit=unit,                        include_now=False,                         end_dt=end_date, fq_ref_date=None)    close = data['close']    open = data['open']    high = data['high']    low = data['low']    return KDJ(high, low, close, 9, 3, 3)"
           
@@ -1280,7 +1282,7 @@ KDJ指标计算函数12345678910111213141516171819202122232425262728293031323334
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/05/04/KDJ%E6%8C%87%E6%A0%87%E5%9C%A8%E6%8C%87%E6%95%B0%E4%B8%8A%E7%9A%84%E6%8B%A9%E6%97%B6%E6%95%88%E5%BA%94/&title=KDJ指标在指数上的择时效应 - HiCoder&summary=123456"""导入常用模块"""import numpy as npimport pandas as pdimport matplotlib.pyplot as pltimport datetimefrom environment import * # 导入回测模块
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/05/04/KDJ%E6%8C%87%E6%A0%87%E5%9C%A8%E6%8C%87%E6%95%B0%E4%B8%8A%E7%9A%84%E6%8B%A9%E6%97%B6%E6%95%88%E5%BA%94/&title=KDJ指标在指数上的择时效应 - HiCoder&pics=https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/thumbnail_line_chart.ico&summary=123456"""导入常用模块"""import numpy as npimport pandas as pdimport matplotlib.pyplot as pltimport datetimefrom environment import * # 导入回测模块
 
 KDJ指标计算函数1234567891011121314151617181920212223242526272829303132333435import talib as tlfrom functools import reduce# SMA计算函数def SMA(close, timeperiod) :    close = np.nan_to_num(close)    return reduce(lambda x, y: ((timeperiod - 1) * x + y) / timeperiod, close)    # KDJ计算函数def KDJ(high, low, close, fastk_period, slowk_period, fastd_period) :    kValue, dValue = tl.STOCHF(high, low, close, fastk_period, fastd_period=1, fastd_matype=0)        kValue = np.array(list(map(lambda x : SMA(kValue[:x], slowk_period), range(1, len(kValue) + 1))))    dValue = np.array(list(map(lambda x : SMA(kValue[:x], fastd_period), range(1, len(kValue) + 1))))        jValue = 3 * kValue - 2 * dValue        func = lambda arr : np.array([0 if x &lt; 0 else (100 if x &gt; 100 else x) for x in arr])        kValue = func(kValue)    dValue = func(dValue)    jValue = func(jValue)    return kValue, dValue, jValue# 获取某标的的KDJ信息def get_kdj(stock, count, end_date, unit):    data = get_bars(security=stock, count=count, unit=unit,                        include_now=False,                         end_dt=end_date, fq_ref_date=None)    close = data['close']    open = data['open']    high = data['high']    low = data['low']    return KDJ(high, low, close, 9, 3, 3)"
           
@@ -1294,7 +1296,7 @@ KDJ指标计算函数12345678910111213141516171819202122232425262728293031323334
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/05/04/KDJ%E6%8C%87%E6%A0%87%E5%9C%A8%E6%8C%87%E6%95%B0%E4%B8%8A%E7%9A%84%E6%8B%A9%E6%97%B6%E6%95%88%E5%BA%94/&title=KDJ指标在指数上的择时效应 - HiCoder&summary=123456"""导入常用模块"""import numpy as npimport pandas as pdimport matplotlib.pyplot as pltimport datetimefrom environment import * # 导入回测模块
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/05/04/KDJ%E6%8C%87%E6%A0%87%E5%9C%A8%E6%8C%87%E6%95%B0%E4%B8%8A%E7%9A%84%E6%8B%A9%E6%97%B6%E6%95%88%E5%BA%94/&title=KDJ指标在指数上的择时效应 - HiCoder&pics=https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/thumbnail_line_chart.ico&summary=123456"""导入常用模块"""import numpy as npimport pandas as pdimport matplotlib.pyplot as pltimport datetimefrom environment import * # 导入回测模块
 
 KDJ指标计算函数1234567891011121314151617181920212223242526272829303132333435import talib as tlfrom functools import reduce# SMA计算函数def SMA(close, timeperiod) :    close = np.nan_to_num(close)    return reduce(lambda x, y: ((timeperiod - 1) * x + y) / timeperiod, close)    # KDJ计算函数def KDJ(high, low, close, fastk_period, slowk_period, fastd_period) :    kValue, dValue = tl.STOCHF(high, low, close, fastk_period, fastd_period=1, fastd_matype=0)        kValue = np.array(list(map(lambda x : SMA(kValue[:x], slowk_period), range(1, len(kValue) + 1))))    dValue = np.array(list(map(lambda x : SMA(kValue[:x], fastd_period), range(1, len(kValue) + 1))))        jValue = 3 * kValue - 2 * dValue        func = lambda arr : np.array([0 if x &lt; 0 else (100 if x &gt; 100 else x) for x in arr])        kValue = func(kValue)    dValue = func(dValue)    jValue = func(jValue)    return kValue, dValue, jValue# 获取某标的的KDJ信息def get_kdj(stock, count, end_date, unit):    data = get_bars(security=stock, count=count, unit=unit,                        include_now=False,                         end_dt=end_date, fq_ref_date=None)    close = data['close']    open = data['open']    high = data['high']    low = data['low']    return KDJ(high, low, close, 9, 3, 3)"
           
