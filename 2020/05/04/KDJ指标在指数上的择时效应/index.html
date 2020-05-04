@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.3'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>KDJ指标在指数上的择时效应 - HiCoder</title>
+  
+    <meta name="keywords" content="量化,python">
+  
+  
+    <meta name="description" content="123456"""导入常用模块"""import numpy as npimport pandas as pdimport matplotlib.pyplot as pltimport datetimefrom environment import * # 导入大树工作室开发的回测模块
+
+KDJ指标计算函数123...">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/keyboard1.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            Hi Coder
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/www.baidu.com
+                  
+                  
+                  
+                    id="wwwbaiducom"
+                  >
+                  <i class='fas fa-rss-square fa-fw'></i>动态
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-desktop fa-fw'></i>课程
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                python 小白入门
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 进阶实战
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 爬虫实战
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 数据分析
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 网站开发
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 桌面应用开发
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 机器学习
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 深度学习
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 量化交易
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-book fa-fw'></i>文档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box">
+                  <i class='fas fa-compact-disc fa-fw music'></i>背景音乐
+                </a>
+                <ul class="list-v">
+                  <li>
+                    <div class="aplayer-container">
+                      
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+                    </div>
+                  </li>
+                </ul>
+              <li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-angle-double-right fa-fw'></i>更多
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/www.baidu.com
+                  
+                  
+                  
+                    id="wwwbaiducom"
+                  >
+                  <i class='fas fa-rss-square fa-fw'></i>动态
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-desktop fa-fw'></i>课程
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                python 小白入门
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 进阶实战
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 爬虫实战
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 数据分析
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 网站开发
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 桌面应用开发
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 机器学习
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 深度学习
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 量化交易
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-book fa-fw'></i>文档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box">
+                  <i class='fas fa-compact-disc fa-fw music'></i>背景音乐
+                </a>
+                <ul class="list-v">
+                  <li>
+                    <div class="aplayer-container">
+                      
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+                    </div>
+                  </li>
+                </ul>
+              <li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-angle-double-right fa-fw'></i>更多
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2020/05/04/KDJ%E6%8C%87%E6%A0%87%E5%9C%A8%E6%8C%87%E6%95%B0%E4%B8%8A%E7%9A%84%E6%8B%A9%E6%97%B6%E6%95%88%E5%BA%94/">
+      KDJ指标在指数上的择时效应
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="hicoder.com.cn" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/aboutme.jpg">
+    <p>大树</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：May 4, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""导入常用模块"""</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">from</span> environment <span class="keyword">import</span> * <span class="comment"># 导入大树工作室开发的回测模块</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="KDJ指标计算函数"><a href="#KDJ指标计算函数" class="headerlink" title="KDJ指标计算函数"></a>KDJ指标计算函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> talib <span class="keyword">as</span> tl</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"></span><br><span class="line"><span class="comment"># SMA计算函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">SMA</span><span class="params">(close, timeperiod)</span> :</span></span><br><span class="line">    close = np.nan_to_num(close)</span><br><span class="line">    <span class="keyword">return</span> reduce(<span class="keyword">lambda</span> x, y: ((timeperiod - <span class="number">1</span>) * x + y) / timeperiod, close)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># KDJ计算函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">KDJ</span><span class="params">(high, low, close, fastk_period, slowk_period, fastd_period)</span> :</span></span><br><span class="line">    kValue, dValue = tl.STOCHF(high, low, close, fastk_period, fastd_period=<span class="number">1</span>, fastd_matype=<span class="number">0</span>)</span><br><span class="line">    </span><br><span class="line">    kValue = np.array(list(map(<span class="keyword">lambda</span> x : SMA(kValue[:x], slowk_period), range(<span class="number">1</span>, len(kValue) + <span class="number">1</span>))))</span><br><span class="line">    dValue = np.array(list(map(<span class="keyword">lambda</span> x : SMA(kValue[:x], fastd_period), range(<span class="number">1</span>, len(kValue) + <span class="number">1</span>))))</span><br><span class="line">    </span><br><span class="line">    jValue = <span class="number">3</span> * kValue - <span class="number">2</span> * dValue</span><br><span class="line">    </span><br><span class="line">    func = <span class="keyword">lambda</span> arr : np.array([<span class="number">0</span> <span class="keyword">if</span> x &lt; <span class="number">0</span> <span class="keyword">else</span> (<span class="number">100</span> <span class="keyword">if</span> x &gt; <span class="number">100</span> <span class="keyword">else</span> x) <span class="keyword">for</span> x <span class="keyword">in</span> arr])</span><br><span class="line">    </span><br><span class="line">    kValue = func(kValue)</span><br><span class="line">    dValue = func(dValue)</span><br><span class="line">    jValue = func(jValue)</span><br><span class="line">    <span class="keyword">return</span> kValue, dValue, jValue</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取某标的的KDJ信息</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_kdj</span><span class="params">(stock, count, end_date, unit)</span>:</span></span><br><span class="line">    data = get_bars(security=stock, count=count, unit=unit,</span><br><span class="line">                        include_now=<span class="literal">False</span>, </span><br><span class="line">                        end_dt=end_date, fq_ref_date=<span class="literal">None</span>)</span><br><span class="line">    close = data[<span class="string">'close'</span>]</span><br><span class="line">    open = data[<span class="string">'open'</span>]</span><br><span class="line">    high = data[<span class="string">'high'</span>]</span><br><span class="line">    low = data[<span class="string">'low'</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> KDJ(high, low, close, <span class="number">9</span>, <span class="number">3</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p><strong>KDJ的使用方法可以参考：<a href="https://www.joinquant.com/view/community/detail/16464" target="_blank" rel="noopener">https://www.joinquant.com/view/community/detail/16464</a></strong></p>
+<h3 id="KDJ指标使用方法-一"><a href="#KDJ指标使用方法-一" class="headerlink" title="KDJ指标使用方法 一"></a>KDJ指标使用方法 一</h3><p><strong>KDJ是一种摆动指标，20与80的位置是我们对当前超买超卖状态的最基本判断。接下来的择时条件如下：</strong></p>
+<ul>
+<li>当D线处于20位置以下时，买进；</li>
+<li>当D线处于80位置以上时，卖出；</li>
+</ul>
+<p><strong>另外，20与80的位置并不是硬性指标，我们可以为其指定一个浮动范围；我们将这个范围N值定在1%~9%之间，然后做回测，并查看其结果。</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">trade_list = []</span><br><span class="line">N =[n/<span class="number">100</span> <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> N:</span><br><span class="line">    <span class="string">"""初始化以下内容"""</span></span><br><span class="line">    context = Context() <span class="comment"># 账户对象</span></span><br><span class="line">    order = Order(context) <span class="comment"># 下单对象</span></span><br><span class="line">    trade = Trade(context, order) <span class="comment"># 回测对旬</span></span><br><span class="line">    context.start_date = <span class="string">'2005-05-01'</span></span><br><span class="line">    context.end_date = <span class="string">'2019-02-22'</span></span><br><span class="line">    context.universe = [<span class="string">'000300.XSHG'</span>]</span><br><span class="line">    context.base = <span class="string">'000300.XSHG'</span></span><br><span class="line"></span><br><span class="line">    <span class="string">"""策略主体"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">handle</span><span class="params">(context, order)</span>:</span></span><br><span class="line">        stock = context.universe[<span class="number">0</span>]</span><br><span class="line">        current_date = trade.context.current_dt</span><br><span class="line">        kdj_day = get_kdj(stock, <span class="number">30</span>, current_date, <span class="string">'1d'</span>)</span><br><span class="line">        </span><br><span class="line">        line_bottm = <span class="number">20</span> * (<span class="number">1</span>+n)</span><br><span class="line">        line_top = <span class="number">80</span> * (<span class="number">1</span>-n)</span><br><span class="line"></span><br><span class="line">        k1 = kdj_day[<span class="number">0</span>][<span class="number">-1</span>]</span><br><span class="line">        d1 = kdj_day[<span class="number">1</span>][<span class="number">-1</span>]</span><br><span class="line">        j1 = kdj_day[<span class="number">2</span>][<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">        k2 = kdj_day[<span class="number">0</span>][<span class="number">-2</span>]</span><br><span class="line">        d2 = kdj_day[<span class="number">1</span>][<span class="number">-2</span>]</span><br><span class="line">        j2 = kdj_day[<span class="number">2</span>][<span class="number">-2</span>]</span><br><span class="line"></span><br><span class="line">        close = get_price(security=stock, </span><br><span class="line">                          end_date=context.current_dt,</span><br><span class="line">                          frequency=<span class="string">'daily'</span>, </span><br><span class="line">                          fields=<span class="literal">None</span>, </span><br><span class="line">                          skip_paused=<span class="literal">False</span>, </span><br><span class="line">                          fq=<span class="string">'pre'</span>,</span><br><span class="line">                          count=<span class="number">5</span>)[<span class="string">'close'</span>]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> d2 &gt; line_bottm <span class="keyword">and</span> d1 &lt; line_bottm :</span><br><span class="line">            <span class="keyword">if</span> stock <span class="keyword">in</span> context.position.keys():</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            order.buy(stock, close[<span class="number">-1</span>], context.cash // close[<span class="number">-1</span>])</span><br><span class="line">        <span class="keyword">elif</span> d2 &lt; line_top <span class="keyword">and</span> d1 &gt; line_top:</span><br><span class="line">            <span class="keyword">if</span> stock <span class="keyword">not</span> <span class="keyword">in</span> context.position.keys():</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            order.sell(stock, close[<span class="number">-1</span>], context.position[stock][<span class="string">'count'</span>])</span><br><span class="line"></span><br><span class="line">    <span class="string">"""执行策略"""</span></span><br><span class="line">    trade.trade(handle, show=<span class="literal">False</span>, log=<span class="literal">True</span>)</span><br><span class="line">    trade_list.append(trade)</span><br><span class="line"><span class="comment"># 展示</span></span><br><span class="line">Trade.show_ratio_compare(<span class="string">'n'</span>, N, trade_list, <span class="number">3</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>End Time : 2019-03-10 16:01:27.192853, Elapsed Time: 0:00:18.351210
+End Time : 2019-03-10 16:01:45.031913, Elapsed Time: 0:00:17.838861
+End Time : 2019-03-10 16:02:02.843599, Elapsed Time: 0:00:17.811513
+End Time : 2019-03-10 16:02:20.318987, Elapsed Time: 0:00:17.475214
+End Time : 2019-03-10 16:02:38.392089, Elapsed Time: 0:00:18.072942
+End Time : 2019-03-10 16:02:55.567773, Elapsed Time: 0:00:17.175470
+End Time : 2019-03-10 16:03:13.802732, Elapsed Time: 0:00:18.234765
+End Time : 2019-03-10 16:03:32.918843, Elapsed Time: 0:00:19.115479
+End Time : 2019-03-10 16:03:51.401436, Elapsed Time: 0:00:18.482391</code></pre><p><img src="https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/kdj_output_5_1.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Trade.show_result(<span class="string">'n'</span>, N, trade_list)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>alpha</th>
+      <th>beta</th>
+      <th>交易次数</th>
+      <th>回测时间</th>
+      <th>基准收益</th>
+      <th>夏普比率</th>
+      <th>年化收益</th>
+      <th>最大回撤</th>
+      <th>盈亏比</th>
+      <th>策略收益</th>
+      <th>胜率</th>
+    </tr>
+    <tr>
+      <th>n</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0.01</th>
+      <td>-0.088320</td>
+      <td>0.3854</td>
+      <td>24</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-4.0289</td>
+      <td>-0.0237</td>
+      <td>0.5978</td>
+      <td>0.6680</td>
+      <td>-0.2740</td>
+      <td>0.5417</td>
+    </tr>
+    <tr>
+      <th>0.07</th>
+      <td>-0.092384</td>
+      <td>0.3463</td>
+      <td>27</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-4.1066</td>
+      <td>-0.0303</td>
+      <td>0.6063</td>
+      <td>0.5964</td>
+      <td>-0.3364</td>
+      <td>0.5185</td>
+    </tr>
+    <tr>
+      <th>0.08</th>
+      <td>-0.100810</td>
+      <td>0.3648</td>
+      <td>29</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-4.1761</td>
+      <td>-0.0375</td>
+      <td>0.6415</td>
+      <td>0.5394</td>
+      <td>-0.3995</td>
+      <td>0.5172</td>
+    </tr>
+    <tr>
+      <th>0.04</th>
+      <td>-0.100655</td>
+      <td>0.3468</td>
+      <td>24</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-4.4318</td>
+      <td>-0.0385</td>
+      <td>0.5986</td>
+      <td>0.4970</td>
+      <td>-0.4077</td>
+      <td>0.5417</td>
+    </tr>
+    <tr>
+      <th>0.05</th>
+      <td>-0.102086</td>
+      <td>0.3445</td>
+      <td>25</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-4.3913</td>
+      <td>-0.0401</td>
+      <td>0.5986</td>
+      <td>0.4827</td>
+      <td>-0.4205</td>
+      <td>0.5200</td>
+    </tr>
+    <tr>
+      <th>0.02</th>
+      <td>-0.106029</td>
+      <td>0.3877</td>
+      <td>24</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-4.7414</td>
+      <td>-0.0413</td>
+      <td>0.5925</td>
+      <td>0.4860</td>
+      <td>-0.4300</td>
+      <td>0.5000</td>
+    </tr>
+    <tr>
+      <th>0.06</th>
+      <td>-0.106598</td>
+      <td>0.3604</td>
+      <td>27</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-4.3707</td>
+      <td>-0.0436</td>
+      <td>0.6219</td>
+      <td>0.4449</td>
+      <td>-0.4480</td>
+      <td>0.4444</td>
+    </tr>
+    <tr>
+      <th>0.09</th>
+      <td>-0.108414</td>
+      <td>0.3642</td>
+      <td>29</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-4.3274</td>
+      <td>-0.0452</td>
+      <td>0.6370</td>
+      <td>0.4550</td>
+      <td>-0.4600</td>
+      <td>0.5172</td>
+    </tr>
+    <tr>
+      <th>0.03</th>
+      <td>-0.114031</td>
+      <td>0.3821</td>
+      <td>24</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-4.9898</td>
+      <td>-0.0497</td>
+      <td>0.6090</td>
+      <td>0.4252</td>
+      <td>-0.4928</td>
+      <td>0.5000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p><strong>从上图来看，kdj在超买与超卖区的反应对于沪深300指数来说，反应并不好。</strong></p>
+<h3 id="KDJ使用方法-二"><a href="#KDJ使用方法-二" class="headerlink" title="KDJ使用方法 二"></a>KDJ使用方法 二</h3><ul>
+<li>当k线与d线形成金叉时买进；</li>
+<li>当k线与d线形成死叉时卖出；</li>
+</ul>
+<p><strong>金叉与死叉形成时，最小的时间段是前天与当天的值的比较，这个时间段也可以被当作一种参数D，其取值范围是1~9天。查看回测结果：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">trade_list = []</span><br><span class="line">D = range(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> d <span class="keyword">in</span> D:</span><br><span class="line">    <span class="string">"""初始化以下内容"""</span></span><br><span class="line">    context = Context() <span class="comment"># 账户对象</span></span><br><span class="line">    order = Order(context) <span class="comment"># 下单对象</span></span><br><span class="line">    trade = Trade(context, order) <span class="comment"># 回测对旬</span></span><br><span class="line">    context.start_date = <span class="string">'2005-05-01'</span></span><br><span class="line">    context.end_date = <span class="string">'2019-02-22'</span></span><br><span class="line">    context.universe = [<span class="string">'000300.XSHG'</span>]</span><br><span class="line">    context.base = <span class="string">'000300.XSHG'</span></span><br><span class="line"></span><br><span class="line">    <span class="string">"""策略主体"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">handle</span><span class="params">(context, order)</span>:</span></span><br><span class="line">        stock = context.universe[<span class="number">0</span>]</span><br><span class="line">        current_date = trade.context.current_dt</span><br><span class="line">        kdj_day = get_kdj(stock, <span class="number">30</span>, current_date, <span class="string">'1d'</span>)</span><br><span class="line"></span><br><span class="line">        k1 = kdj_day[<span class="number">0</span>][<span class="number">-1</span>]</span><br><span class="line">        d1 = kdj_day[<span class="number">1</span>][<span class="number">-1</span>]</span><br><span class="line">        j1 = kdj_day[<span class="number">2</span>][<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">        k2 = kdj_day[<span class="number">0</span>][-d<span class="number">-1</span>]</span><br><span class="line">        d2 = kdj_day[<span class="number">1</span>][-d<span class="number">-1</span>]</span><br><span class="line">        j2 = kdj_day[<span class="number">2</span>][-d<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">        close = get_price(security=stock, </span><br><span class="line">                          end_date=context.current_dt,</span><br><span class="line">                          frequency=<span class="string">'daily'</span>, </span><br><span class="line">                          fields=<span class="literal">None</span>, </span><br><span class="line">                          skip_paused=<span class="literal">False</span>, </span><br><span class="line">                          fq=<span class="string">'pre'</span>,</span><br><span class="line">                          count=<span class="number">5</span>)[<span class="string">'close'</span>]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> k2 &lt; d2 <span class="keyword">and</span> k1 &gt; d1:</span><br><span class="line">            <span class="keyword">if</span> stock <span class="keyword">in</span> context.position.keys():</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            order.buy(stock, close[<span class="number">-1</span>], context.cash // close[<span class="number">-1</span>])</span><br><span class="line">        <span class="keyword">elif</span> k2 &gt; d2 <span class="keyword">and</span> k1 &lt; d1:</span><br><span class="line">            <span class="keyword">if</span> stock <span class="keyword">not</span> <span class="keyword">in</span> context.position.keys():</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            order.sell(stock, close[<span class="number">-1</span>], context.position[stock][<span class="string">'count'</span>])</span><br><span class="line"></span><br><span class="line">    <span class="string">"""执行策略"""</span></span><br><span class="line">    trade.trade(handle, show=<span class="literal">False</span>, log=<span class="literal">True</span>)</span><br><span class="line">    trade_list.append(trade)</span><br><span class="line"><span class="comment"># 展示</span></span><br><span class="line">Trade.show_ratio_compare(<span class="string">'d'</span>, D, trade_list, <span class="number">3</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>End Time : 2019-03-10 16:04:13.577469, Elapsed Time: 0:00:20.034098
+End Time : 2019-03-10 16:04:33.005696, Elapsed Time: 0:00:19.428044
+End Time : 2019-03-10 16:04:52.154929, Elapsed Time: 0:00:19.149037
+End Time : 2019-03-10 16:05:12.142793, Elapsed Time: 0:00:19.987659
+End Time : 2019-03-10 16:05:31.073016, Elapsed Time: 0:00:18.930031
+End Time : 2019-03-10 16:05:51.557113, Elapsed Time: 0:00:20.483901
+End Time : 2019-03-10 16:06:10.902478, Elapsed Time: 0:00:19.345159
+End Time : 2019-03-10 16:06:29.924519, Elapsed Time: 0:00:19.021839
+End Time : 2019-03-10 16:06:48.871547, Elapsed Time: 0:00:18.946834</code></pre><p><img src="https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/kdj_output_8_1.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Trade.show_result(<span class="string">'d'</span>, D, trade_list)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>alpha</th>
+      <th>beta</th>
+      <th>交易次数</th>
+      <th>回测时间</th>
+      <th>基准收益</th>
+      <th>夏普比率</th>
+      <th>年化收益</th>
+      <th>最大回撤</th>
+      <th>盈亏比</th>
+      <th>策略收益</th>
+      <th>胜率</th>
+    </tr>
+    <tr>
+      <th>d</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>0.009414</td>
+      <td>0.4432</td>
+      <td>290</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>1.6912</td>
+      <td>0.0777</td>
+      <td>0.4224</td>
+      <td>1.1965</td>
+      <td>1.7096</td>
+      <td>0.4655</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.008740</td>
+      <td>0.4325</td>
+      <td>260</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>1.6995</td>
+      <td>0.0763</td>
+      <td>0.4995</td>
+      <td>1.2031</td>
+      <td>1.6645</td>
+      <td>0.4846</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.015884</td>
+      <td>0.4357</td>
+      <td>311</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>1.4410</td>
+      <td>0.0519</td>
+      <td>0.4396</td>
+      <td>1.1350</td>
+      <td>0.9625</td>
+      <td>0.4759</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>-0.016955</td>
+      <td>0.4320</td>
+      <td>191</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>1.7708</td>
+      <td>0.0506</td>
+      <td>0.6069</td>
+      <td>1.2340</td>
+      <td>0.9302</td>
+      <td>0.5340</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.024804</td>
+      <td>0.4273</td>
+      <td>240</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>0.9874</td>
+      <td>0.0424</td>
+      <td>0.4962</td>
+      <td>1.1123</td>
+      <td>0.7400</td>
+      <td>0.4708</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-0.035541</td>
+      <td>0.4236</td>
+      <td>226</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>0.6092</td>
+      <td>0.0315</td>
+      <td>0.5534</td>
+      <td>1.0970</td>
+      <td>0.5111</td>
+      <td>0.4779</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-0.039586</td>
+      <td>0.4376</td>
+      <td>209</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>0.5555</td>
+      <td>0.0283</td>
+      <td>0.5664</td>
+      <td>1.0921</td>
+      <td>0.4508</td>
+      <td>0.4976</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-0.042921</td>
+      <td>0.4295</td>
+      <td>199</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>0.3532</td>
+      <td>0.0245</td>
+      <td>0.5844</td>
+      <td>1.0933</td>
+      <td>0.3800</td>
+      <td>0.5075</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-0.046487</td>
+      <td>0.4211</td>
+      <td>181</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>0.0361</td>
+      <td>0.0204</td>
+      <td>0.5937</td>
+      <td>1.0899</td>
+      <td>0.3082</td>
+      <td>0.4972</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p><strong>从上面结果来看，当d=2时回测的效果比较好，但整体看来，仍旧没有跑赢大盘。因此，效果也并不理想。</strong></p>
+<h3 id="KDJ使用方法-三"><a href="#KDJ使用方法-三" class="headerlink" title="KDJ使用方法 三"></a>KDJ使用方法 三</h3><ul>
+<li>当j线与价格发生底背离时，买进；</li>
+<li>当j线与价格发生顶背离时，卖出；</li>
+</ul>
+<p><strong>背离计算的是一段时间内，j线的趋势与价格的趋势在方向上不一致，把时间段设为D值，取值范围是1~9天。回测并查看结果：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">trade_list = []</span><br><span class="line">D = range(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> d <span class="keyword">in</span> D:</span><br><span class="line">    <span class="string">"""初始化以下内容"""</span></span><br><span class="line">    context = Context() <span class="comment"># 账户对象</span></span><br><span class="line">    order = Order(context) <span class="comment"># 下单对象</span></span><br><span class="line">    trade = Trade(context, order) <span class="comment"># 回测对旬</span></span><br><span class="line">    context.start_date = <span class="string">'2005-05-01'</span></span><br><span class="line">    context.end_date = <span class="string">'2019-02-22'</span></span><br><span class="line">    context.universe = [<span class="string">'000300.XSHG'</span>]</span><br><span class="line">    context.base = <span class="string">'000300.XSHG'</span></span><br><span class="line"></span><br><span class="line">    <span class="string">"""策略主体"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">handle</span><span class="params">(context, order)</span>:</span></span><br><span class="line">        stock = context.universe[<span class="number">0</span>]</span><br><span class="line">        current_date = trade.context.current_dt</span><br><span class="line">        kdj_day = get_kdj(stock, <span class="number">30</span>, current_date, <span class="string">'1d'</span>)</span><br><span class="line"></span><br><span class="line">        k1 = kdj_day[<span class="number">0</span>][<span class="number">-1</span>]</span><br><span class="line">        d1 = kdj_day[<span class="number">1</span>][<span class="number">-1</span>]</span><br><span class="line">        j1 = kdj_day[<span class="number">2</span>][<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">        k2 = kdj_day[<span class="number">0</span>][-d<span class="number">-1</span>]</span><br><span class="line">        d2 = kdj_day[<span class="number">1</span>][-d<span class="number">-1</span>]</span><br><span class="line">        j2 = kdj_day[<span class="number">2</span>][-d<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">        close = get_price(security=stock, </span><br><span class="line">                          end_date=context.current_dt,</span><br><span class="line">                          frequency=<span class="string">'daily'</span>, </span><br><span class="line">                          fields=<span class="literal">None</span>, </span><br><span class="line">                          skip_paused=<span class="literal">False</span>, </span><br><span class="line">                          fq=<span class="string">'pre'</span>,</span><br><span class="line">                          count=<span class="number">20</span>)[<span class="string">'close'</span>]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> j1 &gt; j2 <span class="keyword">and</span> close[<span class="number">-1</span>] &lt; close[-d<span class="number">-1</span>]:</span><br><span class="line">            <span class="keyword">if</span> stock <span class="keyword">in</span> context.position.keys():</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            order.buy(stock, close[<span class="number">-1</span>], context.cash // close[<span class="number">-1</span>])</span><br><span class="line">        <span class="keyword">elif</span> j1 &lt; j2 <span class="keyword">and</span> close[<span class="number">-1</span>] &gt; close[-d<span class="number">-1</span>]:</span><br><span class="line">            <span class="keyword">if</span> stock <span class="keyword">not</span> <span class="keyword">in</span> context.position.keys():</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            order.sell(stock, close[<span class="number">-1</span>], context.position[stock][<span class="string">'count'</span>])</span><br><span class="line"></span><br><span class="line">    <span class="string">"""执行策略"""</span></span><br><span class="line">    trade.trade(handle, show=<span class="literal">False</span>, log=<span class="literal">True</span>)</span><br><span class="line">    trade_list.append(trade)</span><br><span class="line"><span class="comment"># 展示</span></span><br><span class="line">Trade.show_ratio_compare(<span class="string">'d'</span>, D, trade_list, <span class="number">3</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>End Time : 2019-03-10 16:07:10.097162, Elapsed Time: 0:00:19.401507
+End Time : 2019-03-10 16:07:30.041172, Elapsed Time: 0:00:19.943802
+End Time : 2019-03-10 16:07:51.642053, Elapsed Time: 0:00:21.600708
+End Time : 2019-03-10 16:08:12.491229, Elapsed Time: 0:00:20.848990
+End Time : 2019-03-10 16:08:32.879961, Elapsed Time: 0:00:20.388533
+End Time : 2019-03-10 16:08:53.409177, Elapsed Time: 0:00:20.528626
+End Time : 2019-03-10 16:09:12.488550, Elapsed Time: 0:00:19.079192
+End Time : 2019-03-10 16:09:32.450308, Elapsed Time: 0:00:19.961573
+End Time : 2019-03-10 16:09:52.517584, Elapsed Time: 0:00:20.067092</code></pre><p><img src="https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/kdj_output_11_1.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Trade.show_result(<span class="string">'d'</span>, D, trade_list)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>alpha</th>
+      <th>beta</th>
+      <th>交易次数</th>
+      <th>回测时间</th>
+      <th>基准收益</th>
+      <th>夏普比率</th>
+      <th>年化收益</th>
+      <th>最大回撤</th>
+      <th>盈亏比</th>
+      <th>策略收益</th>
+      <th>胜率</th>
+    </tr>
+    <tr>
+      <th>d</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>-0.077736</td>
+      <td>0.4270</td>
+      <td>451</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-2.0861</td>
+      <td>-0.0105</td>
+      <td>0.6100</td>
+      <td>0.9727</td>
+      <td>-0.1313</td>
+      <td>0.6341</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-0.110904</td>
+      <td>0.4822</td>
+      <td>109</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-4.2251</td>
+      <td>-0.0402</td>
+      <td>0.6891</td>
+      <td>0.7025</td>
+      <td>-0.4208</td>
+      <td>0.5688</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.117829</td>
+      <td>0.5435</td>
+      <td>199</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-5.1090</td>
+      <td>-0.0432</td>
+      <td>0.6616</td>
+      <td>0.7790</td>
+      <td>-0.4446</td>
+      <td>0.6281</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-0.113946</td>
+      <td>0.4604</td>
+      <td>81</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-4.6125</td>
+      <td>-0.0446</td>
+      <td>0.6432</td>
+      <td>0.6487</td>
+      <td>-0.4555</td>
+      <td>0.5802</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-0.116218</td>
+      <td>0.4692</td>
+      <td>93</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-4.5738</td>
+      <td>-0.0463</td>
+      <td>0.7141</td>
+      <td>0.6920</td>
+      <td>-0.4683</td>
+      <td>0.6237</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>-0.126615</td>
+      <td>0.4572</td>
+      <td>79</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-5.4340</td>
+      <td>-0.0575</td>
+      <td>0.6776</td>
+      <td>0.5574</td>
+      <td>-0.5455</td>
+      <td>0.5696</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.139678</td>
+      <td>0.4686</td>
+      <td>279</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-6.1486</td>
+      <td>-0.0698</td>
+      <td>0.7485</td>
+      <td>0.7312</td>
+      <td>-0.6187</td>
+      <td>0.5950</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-0.157658</td>
+      <td>0.5356</td>
+      <td>121</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-6.7588</td>
+      <td>-0.0835</td>
+      <td>0.7425</td>
+      <td>0.5475</td>
+      <td>-0.6871</td>
+      <td>0.5785</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.191193</td>
+      <td>0.4823</td>
+      <td>140</td>
+      <td>2005-05-01~2019-02-22</td>
+      <td>2.7662</td>
+      <td>-8.0771</td>
+      <td>-0.1204</td>
+      <td>0.8319</td>
+      <td>0.4296</td>
+      <td>-0.8192</td>
+      <td>0.5500</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p><strong>从上图来看，j线的背离效果也不好，k线与d线的背离效果这里就不做加测了。</strong></p>
+<h3 id="下面展示本次研究效果最好的参数，即金叉与死叉条件下，d-2时的结果。"><a href="#下面展示本次研究效果最好的参数，即金叉与死叉条件下，d-2时的结果。" class="headerlink" title="下面展示本次研究效果最好的参数，即金叉与死叉条件下，d=2时的结果。"></a>下面展示本次研究效果最好的参数，即金叉与死叉条件下，d=2时的结果。</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""初始化以下内容"""</span></span><br><span class="line">context = Context() <span class="comment"># 账户对象</span></span><br><span class="line">order = Order(context) <span class="comment"># 下单对象</span></span><br><span class="line">trade = Trade(context, order) <span class="comment"># 回测对旬</span></span><br><span class="line">context.start_date = <span class="string">'2005-05-01'</span></span><br><span class="line">context.end_date = <span class="string">'2019-02-22'</span></span><br><span class="line">context.universe = [<span class="string">'000300.XSHG'</span>]</span><br><span class="line">context.base = <span class="string">'000300.XSHG'</span></span><br><span class="line"></span><br><span class="line"><span class="string">"""策略主体"""</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">handle</span><span class="params">(context, order)</span>:</span></span><br><span class="line">    stock = context.universe[<span class="number">0</span>]</span><br><span class="line">    current_date = trade.context.current_dt</span><br><span class="line">    kdj_day = get_kdj(stock, <span class="number">30</span>, current_date, <span class="string">'1d'</span>)</span><br><span class="line"></span><br><span class="line">    k1 = kdj_day[<span class="number">0</span>][<span class="number">-1</span>]</span><br><span class="line">    d1 = kdj_day[<span class="number">1</span>][<span class="number">-1</span>]</span><br><span class="line">    j1 = kdj_day[<span class="number">2</span>][<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">    k2 = kdj_day[<span class="number">0</span>][<span class="number">-2</span><span class="number">-1</span>]</span><br><span class="line">    d2 = kdj_day[<span class="number">1</span>][<span class="number">-2</span><span class="number">-1</span>]</span><br><span class="line">    j2 = kdj_day[<span class="number">2</span>][<span class="number">-2</span><span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">    close = get_price(security=stock, </span><br><span class="line">                      end_date=context.current_dt,</span><br><span class="line">                      frequency=<span class="string">'daily'</span>, </span><br><span class="line">                      fields=<span class="literal">None</span>, </span><br><span class="line">                      skip_paused=<span class="literal">False</span>, </span><br><span class="line">                      fq=<span class="string">'pre'</span>,</span><br><span class="line">                      count=<span class="number">20</span>)[<span class="string">'close'</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> k2 &lt; d2 <span class="keyword">and</span> k1 &gt; d1:</span><br><span class="line">        <span class="keyword">if</span> stock <span class="keyword">in</span> context.position.keys():</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        order.buy(stock, close[<span class="number">-1</span>], context.cash // close[<span class="number">-1</span>])</span><br><span class="line">    <span class="keyword">elif</span> k2 &gt; d2 <span class="keyword">and</span> k1 &lt; d1:</span><br><span class="line">        <span class="keyword">if</span> stock <span class="keyword">not</span> <span class="keyword">in</span> context.position.keys():</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        order.sell(stock, close[<span class="number">-1</span>], context.position[stock][<span class="string">'count'</span>])</span><br><span class="line"></span><br><span class="line"><span class="string">"""执行策略"""</span></span><br><span class="line">trade.trade(handle, show=<span class="literal">True</span>, log=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>End Time : 2019-03-10 16:11:04.901546, Elapsed Time: 0:00:20.362267</code></pre><p><img src="https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/kdj_output_14_1.png" alt=""></p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-04T09:58:45+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：May 4, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%87%8F%E5%8C%96/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>量化</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/python/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>python</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/05/04/KDJ%E6%8C%87%E6%A0%87%E5%9C%A8%E6%8C%87%E6%95%B0%E4%B8%8A%E7%9A%84%E6%8B%A9%E6%97%B6%E6%95%88%E5%BA%94/&title=KDJ指标在指数上的择时效应 - HiCoder&summary=123456"""导入常用模块"""import numpy as npimport pandas as pdimport matplotlib.pyplot as pltimport datetimefrom environment import * # 导入大树工作室开发的回测模块
+
+KDJ指标计算函数1234567891011121314151617181920212223242526272829303132333435import talib as tlfrom functools import reduce# SMA计算函数def SMA(close, timeperiod) :    close = np.nan_to_num(close)    return reduce(lambda x, y: ((timeperiod - 1) * x + y) / timeperiod, close)    # KDJ计算函数def KDJ(high, low, close, fastk_period, slowk_period, fastd_period) :    kValue, dValue = tl.STOCHF(high, low, close, fastk_period, fastd_period=1, fastd_matype=0)        kValue = np.array(list(map(lambda x : SMA(kValue[:x], slowk_period), range(1, len(kValue) + 1))))    dValue = np.array(list(map(lambda x : SMA(kValue[:x], fastd_period), range(1, len(kValue) + 1))))        jValue = 3 * kValue - 2 * dValue        func = lambda arr : np.array([0 if x &lt; 0 else (100 if x &gt; 100 else x) for x in arr])        kValue = func(kValue)    dValue = func(dValue)    jValue = func(jValue)    return kValue, dValue, jValue# 获取某标的的KDJ信息def get_kdj(stock, count, end_date, unit):    data = get_bars(security=stock, count=count, unit=unit,                        include_now=False,                         end_dt=end_date, fq_ref_date=None)    close = data['close']    open = data['open']    high = data['high']    low = data['low']    return KDJ(high, low, close, 9, 3, 3)"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/05/04/KDJ%E6%8C%87%E6%A0%87%E5%9C%A8%E6%8C%87%E6%95%B0%E4%B8%8A%E7%9A%84%E6%8B%A9%E6%97%B6%E6%95%88%E5%BA%94/&title=KDJ指标在指数上的择时效应 - HiCoder&summary=123456"""导入常用模块"""import numpy as npimport pandas as pdimport matplotlib.pyplot as pltimport datetimefrom environment import * # 导入大树工作室开发的回测模块
+
+KDJ指标计算函数1234567891011121314151617181920212223242526272829303132333435import talib as tlfrom functools import reduce# SMA计算函数def SMA(close, timeperiod) :    close = np.nan_to_num(close)    return reduce(lambda x, y: ((timeperiod - 1) * x + y) / timeperiod, close)    # KDJ计算函数def KDJ(high, low, close, fastk_period, slowk_period, fastd_period) :    kValue, dValue = tl.STOCHF(high, low, close, fastk_period, fastd_period=1, fastd_matype=0)        kValue = np.array(list(map(lambda x : SMA(kValue[:x], slowk_period), range(1, len(kValue) + 1))))    dValue = np.array(list(map(lambda x : SMA(kValue[:x], fastd_period), range(1, len(kValue) + 1))))        jValue = 3 * kValue - 2 * dValue        func = lambda arr : np.array([0 if x &lt; 0 else (100 if x &gt; 100 else x) for x in arr])        kValue = func(kValue)    dValue = func(dValue)    jValue = func(jValue)    return kValue, dValue, jValue# 获取某标的的KDJ信息def get_kdj(stock, count, end_date, unit):    data = get_bars(security=stock, count=count, unit=unit,                        include_now=False,                         end_dt=end_date, fq_ref_date=None)    close = data['close']    open = data['open']    high = data['high']    low = data['low']    return KDJ(high, low, close, 9, 3, 3)"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/05/04/KDJ%E6%8C%87%E6%A0%87%E5%9C%A8%E6%8C%87%E6%95%B0%E4%B8%8A%E7%9A%84%E6%8B%A9%E6%97%B6%E6%95%88%E5%BA%94/&title=KDJ指标在指数上的择时效应 - HiCoder&summary=123456"""导入常用模块"""import numpy as npimport pandas as pdimport matplotlib.pyplot as pltimport datetimefrom environment import * # 导入大树工作室开发的回测模块
+
+KDJ指标计算函数1234567891011121314151617181920212223242526272829303132333435import talib as tlfrom functools import reduce# SMA计算函数def SMA(close, timeperiod) :    close = np.nan_to_num(close)    return reduce(lambda x, y: ((timeperiod - 1) * x + y) / timeperiod, close)    # KDJ计算函数def KDJ(high, low, close, fastk_period, slowk_period, fastd_period) :    kValue, dValue = tl.STOCHF(high, low, close, fastk_period, fastd_period=1, fastd_matype=0)        kValue = np.array(list(map(lambda x : SMA(kValue[:x], slowk_period), range(1, len(kValue) + 1))))    dValue = np.array(list(map(lambda x : SMA(kValue[:x], fastd_period), range(1, len(kValue) + 1))))        jValue = 3 * kValue - 2 * dValue        func = lambda arr : np.array([0 if x &lt; 0 else (100 if x &gt; 100 else x) for x in arr])        kValue = func(kValue)    dValue = func(dValue)    jValue = func(jValue)    return kValue, dValue, jValue# 获取某标的的KDJ信息def get_kdj(stock, count, end_date, unit):    data = get_bars(security=stock, count=count, unit=unit,                        include_now=False,                         end_dt=end_date, fq_ref_date=None)    close = data['close']    open = data['open']    high = data['high']    low = data['low']    return KDJ(high, low, close, 9, 3, 3)"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZgAAAGYCAAAAABaUKuJAAAGBUlEQVR42u3bS27dQAwEQN//0skBjAexm5RjBDU7J9ZnWLNptPz1x/qV68sIwFhgwFhgwFhgrEeYr3J9uv7pvt9e5MN10/s/3S99n6v3r+cJBgwYMGDAgAEDBgyYMcw4AA03Pr1/uvHpe6X7ag/K9rlgwIABAwYMGDBgwIDZw7QPng64Hdg2QG4DaXsQ0/cCAwYMGDBgwIABAwbM+zDbAaQA24JqGyzTfYIBAwYMGDBgwIABA+b3w0wD2PZDv/SDxOn1bxVtYMCAAQMGDBgwYMCAeQ+mffBvua4txLaF29k8wYABAwYMGDBgwIABM4ZJ11XB9L/+XM8TDBgwYMCAAAMGDBgwjzDb1RZR1wGyDZjTgu8qUD7eDwwYMGDAgAEDBgwYMI8w6UbTwV/fNw1sTwO//jBxfTDBgAEDBgwYMGDAgAHzCDMNWtMNTzeUAl4DTQNpegCnwGDAgAEDBgwYMGDAgNnDbINUWji1kNeBsD0g6fPGgR4MGDBgwIABAwYMGDAxzHVgeyuotQdiG1zbYDo+sGDAgAEDBgwYMGDAgHmEmQatq2B2Fei2gfetg7feNxgwYMCAAQMGDBgwYOo+pi2s0o2NC6Qw+LUB9e1g/DgHMGDAgAEDBgwYMGDAjPuYqwIqvW5bLL0VcK8Cb3wAwYABAwYMGDBgwIABE8O8teGrYHY9+DYQtvt+hAMDBgwYMGDAgAEDBswYJv35Ovi19403vvxgr/2gcDwXMGDAgAEDBgwYMGDAPMKkQXD6gldFUzvoaRC9CtbbggwMGDBgwIABAwYMGDA5zDXItlh6CyyF3EKlwRwMGDBgwIABAwYMGDA5TDrQ7WDiFx8GvKf7pb/XBvIUCAwYMGDAgAEDBgwYMM8w7UbSIJoWUm8VVlf73h4QMGDAgAEDBgwYMGDAvAdzFTBbyOuC6y2Q9gB/LMrAgAEDBgwYMGDAgAHzEWYbjNoglRZ018/bBtLtwf7472DAgAEDBgwYMGDAgHmEmQ7kqrBKN7YNkFfvs/3gb3w/MGDAgAEDBgwYMGDAnMO0g92CvHWQ0gDc7nNcAIIBAwYMGDBgwIABA2YMM31Q+oHbNfTbcG8fpLgoAwMGDBgwYMCAAQMGzDhgpistkNqBtoHv6n2v3wsMGDBgwIABAwYMGDA5TPth2tULp0H3OkBePW97MMCAAQMGDBgwYMCAAZPDpMVX+4JXwbINkNuDks4lvR8YMGDAgAEDBgwYMGDmMNsHXr3o9kPCxwBX7iPdbxvYwYABAwYMGDBgwIAB8wwz3UhbKL0d5K6CcFsQtoBgwIABAwYMGDBgwIDpYeoP04YvMt3QW4NOn38dLON9ggEDBgwYMGDAgAEDpoZJQbaBroW9DsIpWDqXxwMABgwYMGDAgAEDBgyYMUxa6LRwV9BXRV96XQs2/n0wYMCAAQMGDBgwYMCs+5g2uLXF2vY5V8VcW4i1Bw4MGDBgwIABAwYMGDB3MFfFVFuYnQW3ZfC9DtQf3x8MGDBgwIABAwYMGDCPMG3R1IJsoduBbA9MelDbgwQGDBgwYMCAAQMGDJj9Hy6lg9pef1XAbYPmPwvOYMCAAQMGDBgwYMCAiWGug+Z0oNsPBbcf6m0LwrMgCgYMGDBgwIABAwYMmDpgtoO9DnDbIipdbdCdXv84VzBgwIABAwYMGDBgwDzCtCDtAKZB76qQugJPB98GUTBgwIABAwYMGDBgwMwD5nUg2wbJtijbPm9bELaFIBgwYMCAAQMGDBgwYOYw24C0HXA6sO1z0sKvncf0PmDAgAEDBgwYMGDAgOlh2kB5HUjbAW/30x6Q64AKBgwYMGDAgAEDBgyYHKYNUG3gbINrW1z91PPT68GAAQMGDBgwYMCAAfNzMG1wbAutdvDb92wh4gMMBgwYMGDAgAEDBgyYH4dpr0+LtatC7CpgXu0DDBgwYMCAAQMGDBgwOcz2g7/p/6cF1PbDv22BNw2ObTEHBgwYMGDAgAEDBgyYHKYtgq6Kq+vAuB1QG3DTg/UYMMGAAQMGDBgwYMCAAfMNxvpdCwwYCwwYCwwYC4z1cf0FYsCB8SJMdg4AAAAASUVORK5CYII=">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/05/04/%E8%81%9A%E5%AE%BD%E5%9B%9E%E6%B5%8B%E5%88%86%E6%9E%90%E6%A8%A1%E5%9D%97/'>
+                <p class='title'>聚宽回测分析模块<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>下面的代码是一个简单的回测模块，数据需要引用聚宽的 jqdata。把下面的代码保存为一个.py 文件，然后上传到聚宽研究根目录下（或者你研究所在文件目录下），然后使用from 文件名 impor...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'KDJ指标在指数上的择时效应',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop mobile">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#KDJ指标计算函数"><span class="toc-text">KDJ指标计算函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KDJ指标使用方法-一"><span class="toc-text">KDJ指标使用方法 一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KDJ使用方法-二"><span class="toc-text">KDJ使用方法 二</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KDJ使用方法-三"><span class="toc-text">KDJ使用方法 三</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下面展示本次研究效果最好的参数，即金叉与死叉条件下，d-2时的结果。"><span class="toc-text">下面展示本次研究效果最好的参数，即金叉与死叉条件下，d&#x3D;2时的结果。</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:me@xaoxuu.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/xaoxuu"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+      
+    
+      
+        Use
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        as theme, total visits
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          times
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/background1.jpeg", "https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/background2.jpeg", "https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/background2.jpeg", "https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/background4.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
