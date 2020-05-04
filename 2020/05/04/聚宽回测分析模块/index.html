@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#2.6.3'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>聚宽回测分析模块 - HiCoder</title>
+  
+    <meta name="keywords" content="量化,python">
+  
+  
+    <meta name="description" content="下面的代码是一个简单的回测模块，数据需要引用聚宽的 jqdata。把下面的代码保存为一个.py 文件，然后上传到聚宽研究根目录下（或者你研究所在文件目录下），然后使用from 文件名 import *，即可导入该模块。">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+  <link rel="shortcut icon" type='image/x-icon' href="https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/keyboard1.ico">
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h'>
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            Hi Coder
+          
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/www.baidu.com
+                  
+                  
+                  
+                    id="wwwbaiducom"
+                  >
+                  <i class='fas fa-rss-square fa-fw'></i>动态
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-desktop fa-fw'></i>课程
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                python 小白入门
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 进阶实战
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 爬虫实战
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 数据分析
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 网站开发
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 桌面应用开发
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 机器学习
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 深度学习
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 量化交易
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-book fa-fw'></i>文档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box">
+                  <i class='fas fa-compact-disc fa-fw music'></i>背景音乐
+                </a>
+                <ul class="list-v">
+                  <li>
+                    <div class="aplayer-container">
+                      
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+                    </div>
+                  </li>
+                </ul>
+              <li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-angle-double-right fa-fw'></i>更多
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/www.baidu.com
+                  
+                  
+                  
+                    id="wwwbaiducom"
+                  >
+                  <i class='fas fa-rss-square fa-fw'></i>动态
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" 
+                  
+                  
+                  >
+                  <i class='fas fa-desktop fa-fw'></i>课程
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li class='header'>
+                python 小白入门
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 进阶实战
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 爬虫实战
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 数据分析
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 网站开发
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 桌面应用开发
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 机器学习
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 深度学习
+              </li>
+            
+          
+                    
+                      
+            
+              <li class='header'>
+                python 量化交易
+              </li>
+            
+          
+                    
+                  </ul>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-book fa-fw'></i>文档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box">
+                  <i class='fas fa-compact-disc fa-fw music'></i>背景音乐
+                </a>
+                <ul class="list-v">
+                  <li>
+                    <div class="aplayer-container">
+                      
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+                    </div>
+                  </li>
+                </ul>
+              <li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-angle-double-right fa-fw'></i>更多
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2020/05/04/%E8%81%9A%E5%AE%BD%E5%9B%9E%E6%B5%8B%E5%88%86%E6%9E%90%E6%A8%A1%E5%9D%97/">
+      聚宽回测分析模块
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a href="hicoder.com.cn" rel="nofollow">
+    <img src="https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/aboutme.jpg">
+    <p>大树</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：May 4, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <p>下面的代码是一个简单的回测模块，数据需要引用聚宽的 jqdata。把下面的代码保存为一个.py 文件，然后上传到聚宽研究根目录下（或者你研究所在文件目录下），然后使用<code>from 文件名 import *</code>，即可导入该模块。</p>
+<a id="more"></a>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""导入常用模块"""</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">from</span> jqdata <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> pylab <span class="keyword">import</span> mpl</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line">mpl.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'FangSong'</span>] <span class="comment"># 指定默认字体</span></span><br><span class="line">mpl.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span> <span class="comment"># 解决保存图像是负号'-'显示为方块的问题</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">"""账户类"""</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Context</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.cash = self.Cash = <span class="number">100000</span> <span class="comment"># 默认初始资金</span></span><br><span class="line">        self.base = <span class="string">'000300.XSHG'</span> <span class="comment"># 默认参考基准</span></span><br><span class="line">        self.position = &#123;&#125; <span class="comment"># 持仓</span></span><br><span class="line">        self.universe = [] <span class="comment"># 标的池</span></span><br><span class="line">        self.current_dt = <span class="string">'2016-01-01'</span></span><br><span class="line">        self.start_date = <span class="string">'2016-01-01'</span> <span class="comment"># 默认交易开始时间</span></span><br><span class="line">        self.end_date = <span class="string">'2016-12-31'</span> <span class="comment"># 默认交易结束时间</span></span><br><span class="line">        self.total_value = <span class="number">0</span> <span class="comment"># 总价值</span></span><br><span class="line">        self.trade_history = [] <span class="comment"># 交易历史记录</span></span><br><span class="line">        self.day_value = [] <span class="comment"># 日收益记录</span></span><br><span class="line">        self.trade_days = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 记录每日收益</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">write_ratio</span><span class="params">(self, security, date)</span>:</span></span><br><span class="line">        the_value = self.cash</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> self.position.keys():</span><br><span class="line">            <span class="comment"># 计算相对于上个交易日的涨跌幅度</span></span><br><span class="line">            price = get_price(s,</span><br><span class="line">                              end_date=date,</span><br><span class="line">                              frequency=<span class="string">'daily'</span>,</span><br><span class="line">                              fields=[<span class="string">'close'</span>],</span><br><span class="line">                              skip_paused=<span class="literal">False</span>,</span><br><span class="line">                              fq=<span class="string">'pre'</span>,</span><br><span class="line">                              count=<span class="number">10</span>)[<span class="string">'close'</span>]</span><br><span class="line"></span><br><span class="line">            value = self.position[s][<span class="string">'count'</span>]*price[<span class="number">-1</span>]</span><br><span class="line">            the_value += value</span><br><span class="line">        self.day_value.append(&#123;<span class="string">'date'</span>:date, <span class="string">'value'</span>:the_value&#125;)</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">"""下单类"""</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Order</span>:</span></span><br><span class="line">    context = Context()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, context)</span>:</span></span><br><span class="line">        self.context = context</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 交易函数，买入与卖出</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">buy</span><span class="params">(self, security, price, count)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> price * count &gt; self.context.cash:</span><br><span class="line">            print(<span class="string">'资金不足，请调整数量！'</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> security <span class="keyword">in</span> self.context.position.keys():</span><br><span class="line">            print(<span class="string">'暂不支持重复下单！'</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        _total_value = price * count</span><br><span class="line">        self.context.cash -= _total_value</span><br><span class="line">        _positon = &#123;<span class="string">'security'</span>: security,</span><br><span class="line">                    <span class="string">'price'</span>: price,</span><br><span class="line">                    <span class="string">'count'</span>: count,</span><br><span class="line">                    <span class="string">'date'</span>: self.context.current_dt,</span><br><span class="line">                    <span class="string">'type'</span>: <span class="string">'buy'</span>,</span><br><span class="line">                    <span class="string">'hold_value'</span>: price * count,</span><br><span class="line">                    <span class="string">'available_cash'</span>: self.context.cash&#125;</span><br><span class="line">        self.context.trade_history.append(_positon)</span><br><span class="line">        self.context.total_value = self.context.cash + _total_value</span><br><span class="line">        self.context.position[security] = _positon</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sell</span><span class="params">(self, security, price, count)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> security <span class="keyword">not</span> <span class="keyword">in</span> self.context.position.keys():</span><br><span class="line">            print(<span class="string">'持仓中不包含标的&#123;&#125;，无法交易！'</span>.format(security))</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> count != self.context.position[security][<span class="string">'count'</span>]:</span><br><span class="line">            print(<span class="string">'这支持分批卖出，请输入全部数量！'</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">        _total_value = price * count</span><br><span class="line">        self.context.cash += _total_value</span><br><span class="line">        _positon = &#123;<span class="string">'security'</span>: security,</span><br><span class="line">                    <span class="string">'price'</span>: price,</span><br><span class="line">                    <span class="string">'count'</span>: count,</span><br><span class="line">                    <span class="string">'date'</span>: self.context.current_dt,</span><br><span class="line">                    <span class="string">'type'</span>: <span class="string">'sell'</span>,</span><br><span class="line">                    <span class="string">'hold_value'</span>: price * count,</span><br><span class="line">                    <span class="string">'available_cash'</span>: self.context.cash&#125;</span><br><span class="line">        self.context.trade_history.append(_positon)</span><br><span class="line">        self.context.total_value = self.context.cash  <span class="comment"># ?</span></span><br><span class="line">        <span class="keyword">del</span> self.context.position[security]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">"""交易类"""</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Trade</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, context, order)</span>:</span></span><br><span class="line">        self.context = context <span class="comment"># 账户</span></span><br><span class="line">        self.order = order <span class="comment"># 下单对象</span></span><br><span class="line">        self.result = &#123;&#125; <span class="comment"># 回测后的评估指标</span></span><br><span class="line">        self.price = <span class="literal">None</span> <span class="comment"># 价格缓存</span></span><br><span class="line">        self.maxdown_point = [] <span class="comment"># 记录最大回撤点位</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 策略回测</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">trade</span><span class="params">(self, func, show=True, log=False)</span>:</span></span><br><span class="line">        time_start = datetime.datetime.now()</span><br><span class="line">        self.price = get_price(security=self.context.base,</span><br><span class="line">                              start_date=self.context.start_date,</span><br><span class="line">                              end_date=self.context.end_date,</span><br><span class="line">                              frequency=<span class="string">'daily'</span>,</span><br><span class="line">                              fields=<span class="literal">None</span>,</span><br><span class="line">                              skip_paused=<span class="literal">False</span>,</span><br><span class="line">                              fq=<span class="string">'pre'</span>)</span><br><span class="line">        close = self.price[<span class="string">'close'</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(close)):</span><br><span class="line">            self.context.current_dt = close.index[i]</span><br><span class="line">            self.context.trade_days = i+<span class="number">1</span></span><br><span class="line">            func(self.context, self.order)</span><br><span class="line">            self.context.write_ratio(self.context.universe[<span class="number">0</span>], self.context.current_dt)</span><br><span class="line">        self.get_result()</span><br><span class="line">        time_end = datetime.datetime.now()</span><br><span class="line">        <span class="keyword">if</span> log:</span><br><span class="line">            print(<span class="string">'End Time : &#123;0&#125;, Elapsed Time: &#123;1&#125;'</span>.format(datetime.datetime.now(), time_end - time_start))</span><br><span class="line">        <span class="keyword">if</span> show:</span><br><span class="line">            self.show_ratio()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 查询交易记录详情</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_trade_detail</span><span class="params">(self)</span>:</span></span><br><span class="line">        _df = pd.DataFrame(self.context.trade_history,</span><br><span class="line">                           columns=[<span class="string">'date'</span>,</span><br><span class="line">                                    <span class="string">'security'</span>,</span><br><span class="line">                                    <span class="string">'type'</span>,</span><br><span class="line">                                    <span class="string">'price'</span>,</span><br><span class="line">                                    <span class="string">'count'</span>,</span><br><span class="line">                                    <span class="string">'hold_value'</span>,</span><br><span class="line">                                    <span class="string">'available_cash'</span>])</span><br><span class="line">        _df.rename(columns=&#123;<span class="string">'date'</span>: <span class="string">'时间'</span>,</span><br><span class="line">                            <span class="string">'security'</span>: <span class="string">'标的'</span>,</span><br><span class="line">                            <span class="string">'type'</span>: <span class="string">'交易类型'</span>,</span><br><span class="line">                            <span class="string">'price'</span>: <span class="string">'交易价格'</span>,</span><br><span class="line">                            <span class="string">'count'</span>: <span class="string">'交易数量'</span>,</span><br><span class="line">                            <span class="string">'hold_value'</span>: <span class="string">'持仓价值'</span>,</span><br><span class="line">                            <span class="string">'available_cash'</span>: <span class="string">'可用资金'</span>&#125;, inplace=<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">return</span> _df</span><br><span class="line"></span><br><span class="line">    <span class="string">"""评估指标"""</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 策略收益</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_absolute_return</span><span class="params">(self)</span>:</span></span><br><span class="line">        _cash = pd.DataFrame(self.context.day_value)[<span class="string">'value'</span>].iloc[<span class="number">-1</span>]</span><br><span class="line">        <span class="keyword">return</span> (_cash - self.context.Cash) / self.context.Cash</span><br><span class="line"></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    年化收益率公式为：</span></span><br><span class="line"><span class="string">    年化收收益率 = （总收益 + 1）** (365.25/天数) -1  【计算自然日/年化收益率】</span></span><br><span class="line"><span class="string">    年化收收益率 = （总收益 + 1）** (250/天数) -1  【计算交易日/年化收益率】</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="comment"># 策略年化收益率</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_annualized_return</span><span class="params">(self)</span>:</span></span><br><span class="line">        _cash = pd.DataFrame(self.context.day_value)[<span class="string">'value'</span>].iloc[<span class="number">-1</span>]</span><br><span class="line">        ratio = (_cash - self.context.Cash) / self.context.Cash</span><br><span class="line">        return_value = (<span class="number">1</span> + ratio) ** (<span class="number">252</span> / len(self.context.day_value)) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> return_value</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 基准收益</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_benchmark_return</span><span class="params">(self)</span>:</span></span><br><span class="line">        ben_data = self.price</span><br><span class="line">        benchmark_return = (ben_data[<span class="string">'close'</span>][<span class="number">-1</span>] - ben_data[<span class="string">'open'</span>][<span class="number">0</span>]) / ben_data[<span class="string">'open'</span>][<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">return</span> benchmark_return</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 基准年化收益率</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_anbenchmark_return</span><span class="params">(self)</span>:</span></span><br><span class="line">        anbenchmark_return = (<span class="number">1</span> + self.get_benchmark_return()) ** (<span class="number">250</span> / len(self.context.day_value)) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> anbenchmark_return</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 计算盈亏比</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_profit_loss_than</span><span class="params">(self)</span>:</span></span><br><span class="line">        _df = pd.DataFrame(self.context.trade_history)</span><br><span class="line">        <span class="keyword">if</span> _df.shape[<span class="number">0</span>] &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        _df[<span class="string">'total_value'</span>] = _df[<span class="string">'available_cash'</span>] + _df[<span class="string">'hold_value'</span>]</span><br><span class="line">        _sell = _df[_df[<span class="string">'type'</span>] == <span class="string">'sell'</span>][<span class="string">'available_cash'</span>]</span><br><span class="line">        _trade_count = _df[_df[<span class="string">'type'</span>] == <span class="string">'sell'</span>].shape[<span class="number">0</span>]</span><br><span class="line">        _buy = _df[_df[<span class="string">'type'</span>] == <span class="string">'buy'</span>][<span class="string">'total_value'</span>][<span class="number">0</span>:_trade_count]</span><br><span class="line">        ratio = np.array(_sell) - np.array(_buy)</span><br><span class="line">        <span class="keyword">return</span> abs(ratio[ratio &gt; <span class="number">0</span>].sum()/ratio[ratio &lt; <span class="number">0</span>].sum())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算交易次数</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_trade_count</span><span class="params">(self)</span>:</span></span><br><span class="line">        _df = pd.DataFrame(self.context.trade_history)</span><br><span class="line">        <span class="keyword">if</span> _df.shape[<span class="number">0</span>] &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> len(_df[_df[<span class="string">'type'</span>] == <span class="string">'sell'</span>].index)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算胜率</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_wine_rate</span><span class="params">(self)</span>:</span></span><br><span class="line">        _df = pd.DataFrame(self.context.trade_history)</span><br><span class="line">        <span class="keyword">if</span> _df.shape[<span class="number">0</span>] &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        _df[<span class="string">'total_value'</span>] = _df[<span class="string">'available_cash'</span>] + _df[<span class="string">'hold_value'</span>]</span><br><span class="line">        _sell = _df[_df[<span class="string">'type'</span>] == <span class="string">'sell'</span>][<span class="string">'available_cash'</span>]</span><br><span class="line">        _trade_count = _df[_df[<span class="string">'type'</span>] == <span class="string">'sell'</span>].shape[<span class="number">0</span>]</span><br><span class="line">        _buy = _df[_df[<span class="string">'type'</span>] == <span class="string">'buy'</span>][<span class="string">'total_value'</span>][<span class="number">0</span>:_trade_count]</span><br><span class="line">        ratio = np.array(_sell) - np.array(_buy)</span><br><span class="line">        <span class="keyword">return</span> len(ratio[ratio &gt; <span class="number">0</span>])/len(ratio)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 夏普比率</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_sharpe</span><span class="params">(self)</span>:</span></span><br><span class="line">        _df = pd.DataFrame(self.context.day_value)</span><br><span class="line">        <span class="keyword">if</span> _df.shape[<span class="number">0</span>] &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        std = ((_df[<span class="string">'value'</span>] - self.context.Cash) / self.context.Cash).std()</span><br><span class="line">        <span class="keyword">if</span> std == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> (self.get_annualized_return() - <span class="number">0.02</span>) * np.sqrt(<span class="number">252</span>) / std</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># beta</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_beta</span><span class="params">(self)</span>:</span></span><br><span class="line">        ben_data = self.price</span><br><span class="line">        ben_data[<span class="string">'income'</span>] = ben_data[<span class="string">'close'</span>].shift(<span class="number">1</span>)</span><br><span class="line">        ben_data[<span class="string">'income1'</span>] = ben_data[<span class="string">'close'</span>].astype(float) - ben_data[<span class="string">'income'</span>].astype(float)</span><br><span class="line">        ben_data[<span class="string">'income2'</span>] = ben_data[<span class="string">'income1'</span>] / ben_data[<span class="string">'income'</span>]</span><br><span class="line">        ben_data_income = np.array(list(ben_data[<span class="string">'income2'</span>].dropna()))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 策略每日收益</span></span><br><span class="line">        _df = pd.DataFrame(self.context.day_value)</span><br><span class="line">        _df[<span class="string">'income'</span>] = _df[<span class="string">'value'</span>].shift(<span class="number">1</span>)</span><br><span class="line">        _df[<span class="string">'income1'</span>] = _df[<span class="string">'value'</span>].astype(float) - _df[<span class="string">'income'</span>].astype(float)</span><br><span class="line">        _df[<span class="string">'income2'</span>] = _df[<span class="string">'income1'</span>] / _df[<span class="string">'income'</span>] </span><br><span class="line">        _df_income = np.array(list(_df[<span class="string">'income2'</span>].dropna()))</span><br><span class="line"></span><br><span class="line">        x = np.cov(ben_data_income, _df_income)</span><br><span class="line">        y = np.var(ben_data_income)</span><br><span class="line">        <span class="comment"># 获取beta值</span></span><br><span class="line">        x_y_data = round(x[<span class="number">0</span>][<span class="number">1</span>]/y, <span class="number">4</span>)</span><br><span class="line">        <span class="keyword">return</span> x_y_data</span><br><span class="line">            </span><br><span class="line">    <span class="comment"># alpha</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_alpha</span><span class="params">(self)</span>:</span></span><br><span class="line">        alpha_data = self.get_annualized_return() - (<span class="number">0.04</span> + self.get_beta() * (self.get_anbenchmark_return() - <span class="number">0.04</span>))</span><br><span class="line">        <span class="keyword">return</span> alpha_data</span><br><span class="line">    </span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    最大回撤计算方式：</span></span><br><span class="line"><span class="string">    在选定周期内任一历史点往后推，净值下降到最低点时的收益率回撤幅度的最大值。</span></span><br><span class="line"><span class="string">    计算方式有两种：</span></span><br><span class="line"><span class="string">    1. 往前计算，首先计算出每天和前面最高点比的最大回撤：1 - 当天值 / 前面的最大值，然后计算出这些数据里最大的值。</span></span><br><span class="line"><span class="string">    2. 往二计算，首先计算出每天和后面最低点比较的最大回撤：1 - 后面的最小值 / 当天值，然后计算出这些数据里最大值。</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="comment"># 最大回撤</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_maxdown</span><span class="params">(self)</span>:</span></span><br><span class="line">        _df = pd.DataFrame(self.context.day_value)</span><br><span class="line">        return_list = _df[<span class="string">'value'</span>]</span><br><span class="line">        i = np.argmax((np.maximum.accumulate(return_list) - return_list) / np.maximum.accumulate(return_list))  <span class="comment"># 结束位置</span></span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        j = np.argmax(return_list[:i])  <span class="comment"># 开始位置</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 记录最大回撤的点位</span></span><br><span class="line">        self.maxdown_point.append(_df.iloc[j])</span><br><span class="line">        self.maxdown_point.append(_df.iloc[i])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> (return_list[j] - return_list[i]) / (return_list[j])</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 总结回测信息</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_result</span><span class="params">(self)</span>:</span></span><br><span class="line">        _dic = &#123;<span class="string">'基准收益'</span>:round(self.get_benchmark_return(), <span class="number">4</span>),</span><br><span class="line">                <span class="string">'策略收益'</span>:round(self.get_absolute_return(), <span class="number">4</span>),</span><br><span class="line">                <span class="string">'年化收益'</span>:round(self.get_annualized_return(), <span class="number">4</span>),</span><br><span class="line">                <span class="string">'最大回撤'</span>:round(self.get_maxdown(), <span class="number">4</span>),</span><br><span class="line">                <span class="string">'夏普比率'</span>:round(self.get_sharpe(), <span class="number">4</span>),</span><br><span class="line">                <span class="string">'盈亏比'</span>:round(self.get_profit_loss_than(), <span class="number">4</span>),</span><br><span class="line">                <span class="string">'胜率'</span>:round(self.get_wine_rate(), <span class="number">4</span>),</span><br><span class="line">                <span class="string">'交易次数'</span>:self.get_trade_count(),</span><br><span class="line">                <span class="string">'beta'</span>:self.get_beta(),</span><br><span class="line">                <span class="string">'alpha'</span>:self.get_alpha(),</span><br><span class="line">                <span class="string">'回测时间'</span>:self.context.start_date+<span class="string">'~'</span>+self.context.end_date&#125;</span><br><span class="line">        self.result = _dic</span><br><span class="line">        <span class="keyword">return</span> _dic</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 报表展示</span></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show_result</span><span class="params">(index_name, index_list, trade_list)</span>:</span></span><br><span class="line">        _list = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(trade_list)):</span><br><span class="line">            _trade = trade_list[i]</span><br><span class="line">            _dic = _trade.result</span><br><span class="line">            _dic[index_name] = index_list[i]</span><br><span class="line">            _list.append(_trade.result)</span><br><span class="line">        _df = pd.DataFrame(_list)</span><br><span class="line">        _df = _df.set_index(index_name)</span><br><span class="line">        _df = _df.sort_values(by=[<span class="string">'年化收益'</span>,<span class="string">'最大回撤'</span>, <span class="string">'alpha'</span>, <span class="string">'夏普比率'</span>, <span class="string">'beta'</span>, <span class="string">'胜率'</span>], </span><br><span class="line">                   ascending=(<span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">False</span>))</span><br><span class="line">        <span class="keyword">return</span> _df</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="string">"""图例展示，所有的评估皆以收盘价为基准"""</span> </span><br><span class="line">    <span class="comment"># 展示收益率曲线</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show_ratio</span><span class="params">(self, w=<span class="number">20</span>, h=<span class="number">7</span>)</span>:</span></span><br><span class="line">        sns.set()</span><br><span class="line">        _price = self.price</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 大盘相对涨幅</span></span><br><span class="line">        start_price = _price[<span class="string">'close'</span>].iloc[<span class="number">0</span>]</span><br><span class="line">        _price[<span class="string">'dapan_ratio'</span>] = (_price[<span class="string">'close'</span>] - start_price) / start_price</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 策略的相对涨幅</span></span><br><span class="line">        _day_price = pd.DataFrame(self.context.day_value)</span><br><span class="line">        _day_price[<span class="string">'trade_ratio'</span>] = (_day_price[<span class="string">'value'</span>] - self.context.Cash) / self.context.Cash</span><br><span class="line"></span><br><span class="line">        plt.figure(figsize=(w, h))</span><br><span class="line">        <span class="comment"># 收益曲线</span></span><br><span class="line">        plt.plot(_price.index, _price[<span class="string">'dapan_ratio'</span>], linewidth = <span class="string">'2'</span>, color=<span class="string">'#FF4500'</span>)</span><br><span class="line">        plt.plot(_day_price[<span class="string">'date'</span>], _day_price[<span class="string">'trade_ratio'</span>], linewidth = <span class="string">'2'</span>, color=<span class="string">'#1E90FF'</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 回撤点位</span></span><br><span class="line">        x_list = [date[<span class="string">'date'</span>] <span class="keyword">for</span> date <span class="keyword">in</span> self.maxdown_point]</span><br><span class="line">        y_list = [(date[<span class="string">'value'</span>] - self.context.Cash) / self.context.Cash <span class="keyword">for</span> date <span class="keyword">in</span> self.maxdown_point]</span><br><span class="line">        plt.scatter(x_list, y_list, c=<span class="string">'g'</span>,linewidths=<span class="number">7</span>, marker=<span class="string">'o'</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 评估指标</span></span><br><span class="line">        plt.title(<span class="string">'Benchmark Returns &#123;0&#125;|Total Returns &#123;1&#125;|Annualized Returns &#123;2&#125;|Max Drawdown &#123;3&#125;|RunTime &#123;4&#125;'</span>.format(</span><br><span class="line">            self.result[<span class="string">'基准收益'</span>],</span><br><span class="line">            self.result[<span class="string">'策略收益'</span>],</span><br><span class="line">            self.result[<span class="string">'年化收益'</span>],</span><br><span class="line">            self.result[<span class="string">'最大回撤'</span>],</span><br><span class="line">            self.result[<span class="string">'回测时间'</span>]), fontsize=<span class="number">16</span>)</span><br><span class="line">        plt.grid(<span class="literal">True</span>)</span><br><span class="line">        plt.legend([<span class="string">'Benchmark Returns'</span>, <span class="string">'Total Returns'</span>], loc=<span class="number">2</span>, fontsize=<span class="number">14</span>)</span><br><span class="line">        plt.show()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 查看对比图</span></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show_ratio_compare</span><span class="params">(index_name, index_list, trade_list, r=<span class="number">2</span>, c=<span class="number">2</span>, w=<span class="number">16</span>, h=<span class="number">9</span>)</span>:</span></span><br><span class="line">        <span class="string">"""指标名，指标列表，交易对象列表，绘图行数，绘图列数"""</span></span><br><span class="line">        sns.set()</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 计算一个子图的宽</span></span><br><span class="line">        width = w / c</span><br><span class="line">        <span class="comment"># 计算一个子图的高</span></span><br><span class="line">        high = width*<span class="number">0.56</span></span><br><span class="line"></span><br><span class="line">        figure,ax = plt.subplots(r, c, figsize=(w,(high+<span class="number">0.5</span>)*r))</span><br><span class="line"></span><br><span class="line">        j = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> _ax <span class="keyword">in</span> ax:</span><br><span class="line">            <span class="keyword">for</span> __ax <span class="keyword">in</span> _ax:</span><br><span class="line">                trade = trade_list[j]</span><br><span class="line">                _price = trade.price</span><br><span class="line">                <span class="comment"># 大盘相对涨幅</span></span><br><span class="line">                start_price = _price[<span class="string">'close'</span>].iloc[<span class="number">0</span>]</span><br><span class="line">                _price[<span class="string">'dapan_ratio'</span>] = (_price[<span class="string">'close'</span>] - start_price) / start_price</span><br><span class="line">                <span class="comment"># 策略的相对涨幅</span></span><br><span class="line">                _day_price = pd.DataFrame(trade.context.day_value)</span><br><span class="line">                _day_price[<span class="string">'trade_ratio'</span>] = (_day_price[<span class="string">'value'</span>] - trade.context.Cash) / trade.context.Cash</span><br><span class="line"></span><br><span class="line">                __ax.plot(_price.index, _price[<span class="string">'dapan_ratio'</span>], color=<span class="string">'#FF4500'</span>)</span><br><span class="line">                __ax.plot(_day_price[<span class="string">'date'</span>], _day_price[<span class="string">'trade_ratio'</span>], color=<span class="string">'#1E90FF'</span>)</span><br><span class="line">                __ax.set_title(<span class="string">'&#123;0&#125;=&#123;1&#125;'</span>.format(index_name,index_list[j],), fontsize=<span class="number">14</span>)</span><br><span class="line">                j += <span class="number">1</span></span><br><span class="line">        plt.show()</span><br><span class="line">        </span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show_all_ratio</span><span class="params">(name , ma_list, trade_list, w=<span class="number">16</span>, h=<span class="number">9</span>)</span>:</span></span><br><span class="line">        sns.set()</span><br><span class="line">        </span><br><span class="line">        _legend = [name+<span class="string">'='</span>+str(_ma) <span class="keyword">for</span> _ma <span class="keyword">in</span> ma_list]</span><br><span class="line">        plt.figure(figsize=(w, h))</span><br><span class="line">        <span class="keyword">for</span> trade <span class="keyword">in</span> trade_list:</span><br><span class="line">            _day_price = pd.DataFrame(trade.context.day_value)</span><br><span class="line">            _day_price[<span class="string">'trade_ratio'</span>] = (_day_price[<span class="string">'value'</span>] - trade.context.Cash) / trade.context.Cash</span><br><span class="line">            plt.plot(_day_price[<span class="string">'date'</span>], _day_price[<span class="string">'trade_ratio'</span>])</span><br><span class="line">        plt.legend(_legend)</span><br><span class="line">        plt.show()</span><br><span class="line">        </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Picture</span>:</span></span><br><span class="line">    <span class="string">"""展示指标图"""</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Model</span>:</span></span><br><span class="line">    <span class="string">"""交易模型，保存量化后的参数"""</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-04T09:43:13+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：May 4, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%87%8F%E5%8C%96/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>量化</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/python/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>python</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/05/04/%E8%81%9A%E5%AE%BD%E5%9B%9E%E6%B5%8B%E5%88%86%E6%9E%90%E6%A8%A1%E5%9D%97/&title=聚宽回测分析模块 - HiCoder&summary=下面的代码是一个简单的回测模块，数据需要引用聚宽的 jqdata。把下面的代码保存为一个.py 文件，然后上传到聚宽研究根目录下（或者你研究所在文件目录下），然后使用from 文件名 import *，即可导入该模块。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/05/04/%E8%81%9A%E5%AE%BD%E5%9B%9E%E6%B5%8B%E5%88%86%E6%9E%90%E6%A8%A1%E5%9D%97/&title=聚宽回测分析模块 - HiCoder&summary=下面的代码是一个简单的回测模块，数据需要引用聚宽的 jqdata。把下面的代码保存为一个.py 文件，然后上传到聚宽研究根目录下（或者你研究所在文件目录下），然后使用from 文件名 import *，即可导入该模块。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/05/04/%E8%81%9A%E5%AE%BD%E5%9B%9E%E6%B5%8B%E5%88%86%E6%9E%90%E6%A8%A1%E5%9D%97/&title=聚宽回测分析模块 - HiCoder&summary=下面的代码是一个简单的回测模块，数据需要引用聚宽的 jqdata。把下面的代码保存为一个.py 文件，然后上传到聚宽研究根目录下（或者你研究所在文件目录下），然后使用from 文件名 import *，即可导入该模块。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/weibo.png">
+          
+        </a>
+      
+    
+      
+        
+        <div class='hoverbox'>
+          <a><img src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-assets/logo/128/wechat.png"></a>
+          <div class='target'>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAF4CAAAAAB79r16AAAFGklEQVR42u3by27cMBAEwP3/n07uAQRxelpaGyne9iWRRV3aTX/+GF8ZHwTgwRvgwRvgwRsF+E84rn7/7/tXry8ndni9q99Nr3v3+7v1jr3AgwcPHjx48ODBgy/CHweAQ/gp6Pb9FtR0I8Ze4MGDBw8ePHjw4ME/AJ9OaAs+DVjpwt8KVODBgwcPHjx48ODB/2T4tAiZbsj2QXh6XeDBgwcPHjx48ODB/yb4aSCaHkz6LEca9MCDBw8ePHjw4MGD/03w22Jh+3oKuN2At4sY8ODBgwcPHjx48OCb8Gkw+V9fx17gwYMHDx48ePDgwRfgt+O0GPlWAJoGvmlAGnuBBw8ePHjw4MGDB1+AP53AaZCaFgrT67YC3fSgVmsjwYMHDx48ePDgwYNvwLcKgacmvA1o7QNJaSECHjx48ODBgwcPHvwb8NPiYft++vl0A9/aSPDgwYMHDx48ePDgn4RPJzL9/DRQbYNVGgjTB2h8ffDgwYMHDx48ePDgC/AtyDRwtA4cbQNgGpDG6wMPHjx48ODBgwcPvgifQm8P/KTBKQ1mreIjDmjgwYMHDx48ePDgwRfg2wd+WsVIK6BNP2+tAzx48ODBgwcPHjz4N+DbxUhaZGwDVivItTYGPHjw4MGDBw8ePPg34E+LiNMJpHDtDagHoe2BJvDgwYMHDx48ePDgi/+Y0CoUWgDp/Z4+sBS/Dx48ePDgwYMHDx78g/BpwGoXEa1A175+ui7w4MGDBw8ePHjw4L8B39qo7X3av09hp0UKePDgwYMHDx48ePBPwLdGC6YVwNLvpeCX9wEPHjx48ODBgwcPvgCfgp2CbguLLVj6/XTDbq8LHjx48ODBgwcPHnwBvlVsjAuB5e/SeacHr7bXBQ8ePHjw4MGDBw/+SfjxH/bDBW2h0u+1gx548ODBgwcPHjx48N+Af/sA07T4aB0oOt2gabAaB0Dw4MGDBw8ePHjw4Avw2yDRmtBTC94Gp9PrHW8kePDgwYMHDx48ePAF+O1Ej4PDsghpb2xalEzdwIMHDx48ePDgwYN/A/4OIn3dfj+FaQXDaZEDHjx48ODBgwcPHnwTfnoAaRpoptdLg00caMKAFD+w4MGDBw8ePHjw4MEX4bcbsL3e9MBRGrTSDTgtbG4fGPDgwYMHDx48ePDgC/DpAtMDQNvvj4uHEDS9760PePDgwYMHDx48ePBF+G1B0T7QtD14lAJvA9/thoMHDx48ePDgwYMHX4SfBqNpcGkteAuZfn/7YIEHDx48ePDgwYMH34RvTTgNXtONSAub0/F44QIePHjw4MGDBw8e/IPw6Q3eKkDGCz6c92lQjAMfePDgwYMHDx48ePBF+GmwmBYfaZBpBZ3tfFobBB48ePDgwYMHDx58A35aOKTgTxca04Jm+0DFQRI8ePDgwYMHDx48+AL8dpwu5PTztAiZFilpkZFeBzx48ODBgwcPHjz4JnzrD/7bALK9XwrcCpDH1wUPHjx48ODBgwcPvgg/DUzbomP7+fT+44NHy6LmOECBBw8ePHjw4MGDB1+AbxUT0+tOF7YFawfAYz/w4MGDBw8ePHjw4H8AfFpAbA8QpfNKC5VpcLt8DR48ePDgwYMHDx78D4LfBo8UcBv8pvNeF0DgwYMHDx48ePDgwT8Avw04rWDVBm8XPPHGggcPHjx48ODBgwdfhJ+O48BQLiRaD0oaBKeFzG2AAg8ePHjw4MGDBw8+gDfeHeDBgzfAgzfAgzcW4y+QfaeZZdtnswAAAABJRU5ErkJggg==">
+          </div>
+        </div>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/05/03/HiCoder%E4%B8%8A%E7%BA%BF%E5%95%A6/'>
+                <p class='title'>HiCoder上线啦<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>
+
+
+HiCoder 终于和大家见面啦。
+HiCoder 站点很早就搭建好了，但一直没想好要用它来做什么。也许这就是种缘份吧——你遇见一个人，起初不在意，可要分别了才发现难以割舍。我正是怀着这样...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '聚宽回测分析模块',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:me@xaoxuu.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/xaoxuu"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+      
+    
+      
+        Use
+        <a href="https://volantis.js.org/" target="_blank" class="codename">Volantis</a>
+        as theme, total visits
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          times
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://xaoxuu.com" target="_blank" rel="noopener">Copyright © 2017-2020 Mr. X</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '8px',
+        duration: '800',
+        interval: '100',
+        scale: '1'
+      });
+    });
+  </script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/background1.jpeg", "https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/background2.jpeg", "https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/background2.jpeg", "https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/background4.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.4/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
