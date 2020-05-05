@@ -21,8 +21,7 @@
     <meta name="keywords" content="量化,python">
   
   
-    <meta name="description" content="123456"""导入常用模块"""import numpy as npimport pandas as pdimport matplotlib.pyplot as pltimport datetimefrom environment import * # 导入回测模块
-基于聚宽研究环境，使用 environme...">
+    <meta name="description" content="基于聚宽研究环境，使用 environment 模块做回测分析。">
   
 
   <!-- feed -->
@@ -883,9 +882,11 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""导入常用模块"""</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">from</span> environment <span class="keyword">import</span> * <span class="comment"># 导入回测模块</span></span><br></pre></td></tr></table></figure>
-<p>基于聚宽研究环境，使用 environment 模块做回测分析。</p>
+          <p>基于聚宽研究环境，使用 environment 模块做回测分析。</p>
 <a id="more"></a>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""导入常用模块"""</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">from</span> environment <span class="keyword">import</span> * <span class="comment"># 导入回测模块</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="KDJ指标计算函数"><a href="#KDJ指标计算函数" class="headerlink" title="KDJ指标计算函数"></a>KDJ指标计算函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> talib <span class="keyword">as</span> tl</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"></span><br><span class="line"><span class="comment"># SMA计算函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">SMA</span><span class="params">(close, timeperiod)</span> :</span></span><br><span class="line">    close = np.nan_to_num(close)</span><br><span class="line">    <span class="keyword">return</span> reduce(<span class="keyword">lambda</span> x, y: ((timeperiod - <span class="number">1</span>) * x + y) / timeperiod, close)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># KDJ计算函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">KDJ</span><span class="params">(high, low, close, fastk_period, slowk_period, fastd_period)</span> :</span></span><br><span class="line">    kValue, dValue = tl.STOCHF(high, low, close, fastk_period, fastd_period=<span class="number">1</span>, fastd_matype=<span class="number">0</span>)</span><br><span class="line">    </span><br><span class="line">    kValue = np.array(list(map(<span class="keyword">lambda</span> x : SMA(kValue[:x], slowk_period), range(<span class="number">1</span>, len(kValue) + <span class="number">1</span>))))</span><br><span class="line">    dValue = np.array(list(map(<span class="keyword">lambda</span> x : SMA(kValue[:x], fastd_period), range(<span class="number">1</span>, len(kValue) + <span class="number">1</span>))))</span><br><span class="line">    </span><br><span class="line">    jValue = <span class="number">3</span> * kValue - <span class="number">2</span> * dValue</span><br><span class="line">    </span><br><span class="line">    func = <span class="keyword">lambda</span> arr : np.array([<span class="number">0</span> <span class="keyword">if</span> x &lt; <span class="number">0</span> <span class="keyword">else</span> (<span class="number">100</span> <span class="keyword">if</span> x &gt; <span class="number">100</span> <span class="keyword">else</span> x) <span class="keyword">for</span> x <span class="keyword">in</span> arr])</span><br><span class="line">    </span><br><span class="line">    kValue = func(kValue)</span><br><span class="line">    dValue = func(dValue)</span><br><span class="line">    jValue = func(jValue)</span><br><span class="line">    <span class="keyword">return</span> kValue, dValue, jValue</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取某标的的KDJ信息</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_kdj</span><span class="params">(stock, count, end_date, unit)</span>:</span></span><br><span class="line">    data = get_bars(security=stock, count=count, unit=unit,</span><br><span class="line">                        include_now=<span class="literal">False</span>, </span><br><span class="line">                        end_dt=end_date, fq_ref_date=<span class="literal">None</span>)</span><br><span class="line">    close = data[<span class="string">'close'</span>]</span><br><span class="line">    open = data[<span class="string">'open'</span>]</span><br><span class="line">    high = data[<span class="string">'high'</span>]</span><br><span class="line">    low = data[<span class="string">'low'</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> KDJ(high, low, close, <span class="number">9</span>, <span class="number">3</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
 
@@ -1529,7 +1530,7 @@ End Time : 2019-03-10 16:09:52.517584, Elapsed Time: 0:00:20.067092</code></pre>
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-05T21:32:18+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-05-05T21:33:08+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：May 5, 2020</p>
@@ -1559,8 +1560,7 @@ End Time : 2019-03-10 16:09:52.517584, Elapsed Time: 0:00:20.067092</code></pre>
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=www.hicoder.com.cn/2020/05/04/KDJ%E6%8C%87%E6%A0%87%E5%9C%A8%E6%8C%87%E6%95%B0%E4%B8%8A%E7%9A%84%E6%8B%A9%E6%97%B6%E6%95%88%E5%BA%94/&title=KDJ指标在指数上的择时效应 - HiCoder&pics=https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/thumbnail_line_chart.ico&summary=123456"""导入常用模块"""import numpy as npimport pandas as pdimport matplotlib.pyplot as pltimport datetimefrom environment import * # 导入回测模块
-基于聚宽研究环境，使用 environment 模块做回测分析。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=www.hicoder.com.cn/2020/05/04/KDJ%E6%8C%87%E6%A0%87%E5%9C%A8%E6%8C%87%E6%95%B0%E4%B8%8A%E7%9A%84%E6%8B%A9%E6%97%B6%E6%95%88%E5%BA%94/&title=KDJ指标在指数上的择时效应 - HiCoder&pics=https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/thumbnail_line_chart.ico&summary=基于聚宽研究环境，使用 environment 模块做回测分析。"
           
           >
           
@@ -1572,8 +1572,7 @@ End Time : 2019-03-10 16:09:52.517584, Elapsed Time: 0:00:20.067092</code></pre>
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=www.hicoder.com.cn/2020/05/04/KDJ%E6%8C%87%E6%A0%87%E5%9C%A8%E6%8C%87%E6%95%B0%E4%B8%8A%E7%9A%84%E6%8B%A9%E6%97%B6%E6%95%88%E5%BA%94/&title=KDJ指标在指数上的择时效应 - HiCoder&pics=https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/thumbnail_line_chart.ico&summary=123456"""导入常用模块"""import numpy as npimport pandas as pdimport matplotlib.pyplot as pltimport datetimefrom environment import * # 导入回测模块
-基于聚宽研究环境，使用 environment 模块做回测分析。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=www.hicoder.com.cn/2020/05/04/KDJ%E6%8C%87%E6%A0%87%E5%9C%A8%E6%8C%87%E6%95%B0%E4%B8%8A%E7%9A%84%E6%8B%A9%E6%97%B6%E6%95%88%E5%BA%94/&title=KDJ指标在指数上的择时效应 - HiCoder&pics=https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/thumbnail_line_chart.ico&summary=基于聚宽研究环境，使用 environment 模块做回测分析。"
           
           >
           
@@ -1585,8 +1584,7 @@ End Time : 2019-03-10 16:09:52.517584, Elapsed Time: 0:00:20.067092</code></pre>
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=www.hicoder.com.cn/2020/05/04/KDJ%E6%8C%87%E6%A0%87%E5%9C%A8%E6%8C%87%E6%95%B0%E4%B8%8A%E7%9A%84%E6%8B%A9%E6%97%B6%E6%95%88%E5%BA%94/&title=KDJ指标在指数上的择时效应 - HiCoder&pics=https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/thumbnail_line_chart.ico&summary=123456"""导入常用模块"""import numpy as npimport pandas as pdimport matplotlib.pyplot as pltimport datetimefrom environment import * # 导入回测模块
-基于聚宽研究环境，使用 environment 模块做回测分析。"
+          href="http://service.weibo.com/share/share.php?url=www.hicoder.com.cn/2020/05/04/KDJ%E6%8C%87%E6%A0%87%E5%9C%A8%E6%8C%87%E6%95%B0%E4%B8%8A%E7%9A%84%E6%8B%A9%E6%97%B6%E6%95%88%E5%BA%94/&title=KDJ指标在指数上的择时效应 - HiCoder&pics=https://cdn.jsdelivr.net/gh/mrshiqiqi/resource/thumbnail_line_chart.ico&summary=基于聚宽研究环境，使用 environment 模块做回测分析。"
           
           >
           
